@@ -3,5 +3,5 @@
 # Start Gunicorn processes
 echo Starting Gunicorn.
 exec gunicorn startup.wsgi:application \
-    --bind 127.0.0.1:8000 \
+    --bind 127.0.0.1:8080 \
     --workers 3

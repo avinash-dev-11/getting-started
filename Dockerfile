@@ -26,9 +26,9 @@ RUN set -ex \
 
 ADD startup /app
 WORKDIR /app
-
+EXPOSE 8080
 ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
 EXPOSE 8000
-ENTRYPOINT ["gunicorn", "--bind", ":8000", "--workers", "3", "startup.wsgi:application"]
+ENTRYPOINT ["gunicorn", "--bind", ":8080", "--workers", "3", "startup.wsgi:application"]
