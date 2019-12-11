@@ -1,7 +1,0 @@
-
-  "name": "Get-Started",
-  "description": "A barebones Node.js app using Express",
-  "repository": "https://git.hashedin.com/devops/Google-Cloud-Platform/get-started-gcp",
-//   "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["node", "express", "static"]
-}
