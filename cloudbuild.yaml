@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/gn-staging/button', '.']
+- name: 'gcr.io/cloudshell-images/custom-image-validation'
+  args: ['image_test.py', '--image', 'gcr.io/gn-staging/button']
+images: ['gcr.io/gn-staging/button']
+timeout: '1200s'
