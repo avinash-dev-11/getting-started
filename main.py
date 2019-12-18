@@ -5,7 +5,7 @@ import os
 
 app = Flask (__name__)
 dataset = tablib.Dataset()
-with open(os.path.join(os.path.dirname(__file__),'./templates/projects.csv')) as f:
+with open(os.path.join(os.path.dirname(__file__),'projects.csv')) as f:
     dataset.csv = f.read()
 
 @app.route("/")
@@ -15,21 +15,21 @@ def index():
 @app.route('/iam')
 def view_page():
     iamset = tablib.Dataset()
-    with open(os.path.join(os.path.dirname(__file__),'./templates/projects_iam.csv')) as f:
+    with open(os.path.join(os.path.dirname(__file__),'projects_iam.csv')) as f:
         iamset.csv = f.read()
     return iamset.html
 
 @app.route('/bucket')
 def bucket_page():
     bucketset = tablib.Dataset()
-    with open(os.path.join(os.path.dirname(__file__),'./templates/buckets_iam.csv')) as f:
+    with open(os.path.join(os.path.dirname(__file__),'buckets_iam.csv')) as f:
         bucketset.csv = f.read()
     return bucketset.html
 
 @app.route('/serviceaccount')
 def service_page():
     serviceset = tablib.Dataset()
-    with open(os.path.join(os.path.dirname(__file__),'./templates/serviceAccounts.csv')) as f:
+    with open(os.path.join(os.path.dirname(__file__),'serviceAccounts.csv')) as f:
         serviceset.csv = f.read()
     return serviceset.html
 
