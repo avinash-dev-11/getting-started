@@ -1,4 +1,6 @@
 steps:
+- name: 'ubuntu'
+  args: ['sh', './hello.sh']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/gn-staging/button', '.']
 - name: 'gcr.io/cloudshell-images/custom-image-validation'

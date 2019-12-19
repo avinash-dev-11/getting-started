@@ -1,4 +1,5 @@
 import logging
+import os , time , requests
 from googleapiclient.discovery import build
 #import googleapiclient.discovery
 from googleapiclient.errors import HttpError
@@ -12,7 +13,12 @@ from oauth2client.client import GoogleCredentials
 
 class GcpIamIterator:
     def __init__(self, use_cache=True):
+        global credentials
+        # credentials = os.system('gcloud auth application-default login --no-launch-browser')
+        # print(credentials)
         credentials = GoogleCredentials.get_application_default()
+        print(credentials)
+        # time.sleep(30)
         google_crm_service = build('cloudresourcemanager', 'v1',
                                    credentials=credentials)
         google_iam_service = build('iam', 'v1', credentials=credentials)
